@@ -1,0 +1,91 @@
+
+.title{
+    padding: 60px 0;
+    background-color: white;
+}
+
+.title_text{
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sort_form{
+    display: flex;
+
+}
+
+.a1{
+    width: 95px;
+    color: gray;
+}
+
+.sort_size{
+    padding: 0px 0px 0px 50px;
+}
+
+.a2{
+    width: 95px;
+    color: gray;
+}
+
+* {box-sizing: border-box;}
+form {
+  position: relative;
+  width: 300px;
+  margin: -10px 0px 0px 700px;
+}
+input, button {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+input {
+  width: 100%;
+  height: 42px;
+  background: white;
+  padding-left: 15px;
+}
+button {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  cursor: pointer;
+}
+button:before {
+  content: "\f105";
+  font-family: FontAwesome;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.clothes{
+    padding: 40px 0px 0px 0px;
+}
+
+.clothes_row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px -150px 0px -150px;
+}
+
+.clothes_card{
+    padding: 0 30px 50px 0;
+}
+
+.card_text p:first-child{
+    color: gray;
+    padding: 20px 0px 15px 0px;
+    font-size: 20px;
+}
+
+.card_text p:last-child{
+    color: gray;
+    font-size: 17px;
+}

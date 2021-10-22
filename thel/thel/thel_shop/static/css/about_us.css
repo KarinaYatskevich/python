@@ -1,0 +1,87 @@
+
+.title{
+    padding: 60px 0;
+    background-color: white;
+}
+
+.title_row{
+    padding: 0px 0px 0px 120px;
+}
+
+.title_text{
+    color: black;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.text{
+    padding: 60px 0;
+    background-color: white;
+}
+
+.text_text{
+    padding: 0 250px 0 120px;
+    margin: -100px 0 0 0;
+}
+
+.text_text h6{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 0 0 35px 0;
+}
+
+.text_text p{
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 25px;
+    color: grey;
+    letter-spacing: 2px;    
+}
+
+.text_text h3{
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 25px;
+    color: grey;
+    letter-spacing: 2px;  
+    padding: 15px 0 0 0;
+}
+
+.text_text h5{
+    color: black;
+    font-size: 60px;
+    font-weight: 600;
+    padding: 15px 0 0 0;
+}
+
+.text_text h4{
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 25px;
+    color: grey;
+    letter-spacing: 2px; 
+    padding: 15px 0;
+}
+
+.text_text b{
+    font-size: 15px;
+    line-height: 25px;
+    color: black;
+    letter-spacing: 2px; 
+    padding: 15px 0;
+}
+
+.text_text img{
+    height: 400px;
+    width: 350px;
+    padding: 25px 0 35px 0;
+}
+
+.text_text h2{
+    font-size: 15px;
+    line-height: 25px;
+    color: black;
+    letter-spacing: 2px; 
+    padding: 15px 0;
+}

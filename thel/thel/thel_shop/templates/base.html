@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta charset="UTF-8">
+    
+    {% block title%}
+    <title>THEL</title>
+    {% endblock %}
+    
+    {% load static%}
+
+    {% load thel_tags %}
+    {% get_list_categories as categories %}
+    
+    {% block style %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="{% static 'js/sidebar.js' %}"></script>		
+</head>
+<body>
+    <div class="wraper">
+        <div class="content">
+            <div class="header">
+                <div class="container">
+                    <div class="header_sidebar">
+                            <div id="mySidebar" class="sidebar">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <a href="{% url 'main' %}">main</a>
+                                <a href="{% url 'all_category' %}">all clothes</a>
+                                {% for item in categories %}
+                                <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                                {% endfor %}
+                                <a href="{% url 'faq' %}">faq</a>
+                                <a href="{% url 'thel_society' %}">about us</a>
+                                <a href="{% url 'about_us' %}">thel.society</a>
+                            </div>
+                            <div id="main">
+                                <button class="openbtn" onclick="openNav()">&#9776;</button>
+                            </div>
+                        </div>
+                        <div class="hi_row">
+                            <div class="hi_text">
+                                THEL
+                            </div>
+                        </div>
+                </div>
+            </div>
+            {% block contant %}{% endblock %}
+        </div>
+        {% block footer %}{% endblock %}
+    </div>
+</body>
+</html>

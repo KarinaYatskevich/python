@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+{% endblock %}
+
+{% block contant %}
+<div class="title">
+    <div class="container">
+        <div class="title_row">
+            <div class="title_text">
+                All CLOTHES
+            </div>
+        </div>
+    </div> 
+</div>
+<div class="sort">
+    <div class="container">
+        <div class="sort_row">
+            <div class="sort_form">
+                <div class="sort_chapter">
+                    <select name="once" class="a1">
+                        <option selected>Раздел</option>
+                        <option value="1">DRESSES</option>
+                        <option value="1">JACKETS</option>
+                        <option value="1">JACKETS/STORMY</option>
+                        <option value="1">LE SUMM</option>
+                        <option value="1">LEGGINS</option>
+                        <option value="1">SHIRTS</option>
+                    </select>
+                </div>
+                <div class="sort_size">
+                    <select name="size" class="a2">
+                        <option selected>Размер</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                    </select>
+                </div>
+                <form action="{% url 'search_results' %}" method="get">
+                    <input type="text" placeholder="search">
+                    <button type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clothes">
+    <div class="container">
+        <div class="clothes_row">
+            {% for i in clothes %}
+            <div class="clothes_card">
+                <div class="card_img">
+                    {% if i.photo %}
+                        <img src="{{ i.photo.url }}" width="450px" height="590px" alt="">
+                    {% endif %}
+                </div>
+                <div class="card_text">
+                    <a href="{% url 'clothe_detail' i.pk %}"><p>{{ i.name }}</p></a>
+                    <a href="{% url 'clothe_detail' i.pk %}"><p>{{ i.price }}</p></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

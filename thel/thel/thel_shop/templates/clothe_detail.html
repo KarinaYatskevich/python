@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta charset="UTF-8">
+    <title>THEL</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/clothe_detail.css' %}">
+</head>
+<body>
+    <div class="wraper">
+        <div class="content">
+            <div class="back">
+                <div class="container">
+                    <div class="back_row">
+                        <a href="javascript:history.back()"><img src="https://img.icons8.com/ios/24/000000/long-arrow-left.png"/><span>more products</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="header">
+                <div class="detail">
+                    <div class="container">
+                        <div class="detail_row">
+                            <div class="detail_img">
+                                <img src="{{ clothe_detail.photo.url }}" width="600px" height="750px" alt="">
+                            </div>
+                            <div class="detail_text">
+                                <h1 class="detail_text1">{{ clothe_detail.name }}</h1>
+                                <h2 class="detail_text2">{{ clothe_detail.price }} руб.</h2>
+                                <div class="sort_size">
+                                    <p class="detail_text3">Размер:</p>
+                                    <select name="size" class="a2">
+                                        <option value="XS" class="size_text">XS</option>
+                                        <option value="S" class="size_text">S</option>
+                                        <option value="M" class="size_text">M</option>
+                                    </select>
+                                </div>
+                                <button class="button"><p class="button_text">BUY NOW</p></button>
+                                <p class="detail_text4">{{ clothe_detail.abstract }}</p>
+                                <p class="detail_text4">Состав: {{ clothe_detail.consist }}</p>
+                                <p class="detail_text4">Уход: {{ clothe_detail.care }}</p>
+                                <p class="detail_text4">Параметры:</p>
+                                <p class="detail_text5">XS: 84-64-90</p>
+                                <p class="detail_text5">S: 88-68-94</p>
+                                <p class="detail_text5">M: 92-72-98</p>           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

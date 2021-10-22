@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ news_item.title }} :: {{ block.super }}
+{% endblock %}
+
+{% block style%}
+<style>
+    #d {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 15%;
+    }
+</style>
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card mb-3" >
+              <div class="card-header">
+                  Категория: <a href="{{ news_item.category.get_absolute_url }}">{{news_item.category}}</a>
+              </div>
+              <div class="card-body">
+                   <div class="media" style="display: flex;">
+                      {% if news_item.photo %}
+                        <img src="{{ news_item.photo.url }}" alt="" width="350"  height="450" class="mr-3" align="left" hspace="10">
+                      {% endif %}
+                      <div class="media-body">
+                            <h5 class="card-title">{{news_item.title}}</h5>
+                          <hr>
+                            <p><b>Another title</b></p>
+                            <p class="card-text">{{news_item.another_title}}</p>
+                          <hr>
+                            <p><b>Authors</b></p>
+                            <p class="card-text">{{news_item.authors}}</p>
+                          <hr>
+                            <p><b>Bibliographic entry</b></p>
+                            <p class="card-text">{{news_item.bibliographic_entry}}</p>
+                          <hr>
+                            <p><b>Abstract</b></p>
+                            <p class="card-text">{{news_item.abstract}}</p>
+                          <hr>
+                            <p><b>Abstract in another language</b></p>
+                            <p class="card-text">{{news_item.abstract_in_another_language}}</p>
+                          <hr>
+                            <p><b>URL</b></p>
+                            <a href="{{news_item.URL}}" class="card-text">{{news_item.URL}}</a>
+                          <hr>
+                            <p><b>File</b></p>
+                            <a href="{{ news_item.file}}" class="card-text">{{news_item.file}}</a>
+                          <hr>
+                            <form action="{% url 'like_news' news_item.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" name="news_id" value="{{ news_item.id }}" class="btn btn-primary btn-sm">Like</button> - {{ total_likes }} Likes
+                            </form>
+                          <div id="disqus_thread"></div>
+                                        <script id="d">
+                                            /**
+                                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                                            /*
+                                            var disqus_config = function () {
+                                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                            };
+                                            */
+                                            (function() { // DON'T EDIT BELOW THIS LINE
+                                            var d = document, s = d.createElement('script');
+                                            s.src = 'https://news-pxnwafld7f.disqus.com/embed.js';
+                                            s.setAttribute('data-timestamp', +new Date());
+                                            (d.head || d.body).appendChild(s);
+                                            })();
+                                        </script>
+                                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                        <script src="https://yastatic.net/share2/share.js"></script>
+                                        <div class="ya-share2" data-curtain data-shape="round" data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber"></div>
+                      </div>
+                      <div>
+                          {% if is_favourite %}
+                        <a href="{% url 'favourite_news' news_item.id %}"><button class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                          </svg></button>
+                        </a>
+                          {% else %}
+                          <a href="{% url 'favourite_news' news_item.id %}"><button class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                          </svg></button>
+                        </a>
+                          {% endif %}
+                      </div>
+                   </div>
+              </div>
+              <div class="card-footer text-muted">
+                  {{news_item.create_at|date:"Y-m-d H:i:s"}}
+              </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Регистрация</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Регистрация</h1>
+    <form method="post">
+
+    <label for="login"><b>Логин:</b></label>
+    <input id="login" class="form-control" type="text" name='login' placeholder="Придумайте логин" required>
+
+    <label for="psw"><b>Пароль:</b></label>
+    <input id="psw" class="form-control" type="password" name='password' placeholder="Придумайте пароль" required>
+
+    <label for="psw-repeat"><b>Повторите пароль:</b></label>
+    <input id="psw-repeat" class="form-control" type="password" name='password2' placeholder="Повторите пароль" required><br>
+
+
+    <input type="reset" class="btn btn-dangerous" class="del" value="Удалить все">
+        <input class="btn btn-warning" type="submit" value="Зарегистрироваться">
+
+
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+{% endblock %}
+
+{% block contant %}
+<div class="title">
+    <div class="container">
+        <div class="title_row">
+            <div class="title_text">
+                ABOUT THEL STUDIOS
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text">
+    <div class="container">
+        <div class="text_row">
+            <div class="text_text">
+                <h6>THEL — это не про вещи.<br>THEL — это про ощущения.</h6>
+                <p>Мы — концептуальный российский бренд одежды, которому важно не просто создать изделие, а наделить его особой атмосферой и показать, что за одеждой стоит намного больше, чем просто красивая картинка.</p>
+                <h3>Например,</h3>
+                <h5>COMMUNITY.</h5>
+                <h4>Таким образом, каждый человек, приобретающий изделие от THEL, становится частью <b>thel.society</b></h4>
+                <img src="{% static 'img/.jpg' %}" alt="">
+                <p>Стремление к самосовершенствованию — то, что движет нами при создании коллекций, и то, в чем мы похожи с каждым из вас.</p>
+                <h2><b>Стать лучшей версией себя вместе с THEL.</b></h2>
+                <img src="{% static 'img/5.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

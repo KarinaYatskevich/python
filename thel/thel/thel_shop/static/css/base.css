@@ -1,0 +1,155 @@
+/*Обнуление*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+.sidebar {
+    height: 100%; /* 100% Полный рост */
+    width: 0; /* 0 ширина - измените это с помощью JavaScript */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Оставайтесь на вершине */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Черный */
+    overflow-x: hidden; /* Отключить горизонтальную прокрутку */
+    transition: 0.5s; /* 0.5 секунд эффект перехода для скольжения в боковой панели */
+}
+  
+  /* На боковой панели */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+  /* При наведении курсора мыши на навигационные ссылки измените их цвет */
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+  
+  /* Положение и стиль кнопки закрытия (верхний правый угол) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+  /* Кнопка для открытия бокового бара */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+}
+  
+.openbtn:hover {
+    background-color: #444;
+}
+  
+  /* Стиль содержимого страницы - используйте это, если вы хотите переместить содержимое страницы вправо при открытии боковой навигации */
+#main {
+    transition: margin-left .5s; /* Если вы хотите эффект перехода */
+    padding: 20px; 
+}
+  
+  /* На небольших экранах, где высота меньше 450px, измените стиль sidebar (меньше отступов и меньший размер шрифта) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.container{
+	max-width: 1180px;
+	margin: 0px auto;
+}
+
+.header_sidebar{
+    display: block;
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+.header{
+    padding: 35px 0;
+}
+
+.hi_row{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.hi_text{
+    color: black;
+    font-size: 40px;
+    font-weight: 800;
+    margin: -70px 0;
+}
+
+* {box-sizing: border-box;}
+form {
+  position: relative;
+  width: 300px;
+  margin: -10px 0px 0px 700px;
+}
+input, button {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+input {
+  width: 100%;
+  height: 42px;
+  background: white;
+  padding-left: 15px;
+}
+button {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  cursor: pointer;
+}
+button:before {
+  content: "\f105";
+  font-family: FontAwesome;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
